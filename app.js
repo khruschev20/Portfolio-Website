@@ -70,6 +70,38 @@ function filterProjects(filter) {
     });
 }
 
+// List of technologies and frameworks with skill levels (0-100)
+const expertiseItems = [
+    { title: 'HTML & CSS', description: 'Creating responsive and modern web designs.', level: 90 },
+    { title: 'JavaScript (ES6+)', description: 'Building dynamic and interactive web applications.', level: 85 },
+    { title: 'Node.js & Express.js', description: 'Developing efficient server-side applications.', level: 70 },
+    { title: 'React.js', description: 'Crafting fast and scalable frontend applications.', level: 65 },
+    { title: 'SQL & PostgreSQL', description: 'Managing databases and writing optimized queries.', level: 70 },
+    { title: 'Git & GitHub', description: 'Version control and collaboration on projects.', level: 95 }
+];
+
+// Function to display expertise items
+function displayExpertise() {
+    const expertiseListContainer = document.getElementById('expertiseList');
+    expertiseListContainer.innerHTML = ''; // Clear existing content
+
+    expertiseItems.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.className = 'expertise-item';
+        itemElement.innerHTML = `
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+            <div class="skill-bar">
+                <div class="skill-level" style="width: ${item.level}%;"></div>
+            </div>
+        `;
+        expertiseListContainer.appendChild(itemElement);
+    });
+}
+
+// Call function to display expertise on page load
+displayExpertise();
+
 // Contact Form Submission
 document.getElementById('contactForm').addEventListener('submit', e => {
     e.preventDefault();
