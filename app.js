@@ -91,6 +91,7 @@ function displayExpertise() {
         itemElement.innerHTML = `
             <h3>${item.title}</h3>
             <p>${item.description}</p>
+            <h4><b>Skill Level:</b></h4>
             <div class="skill-bar">
                 <div class="skill-level" style="width: ${item.level}%;"></div>
             </div>
